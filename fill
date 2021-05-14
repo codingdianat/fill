@@ -1,0 +1,63 @@
+#include <iostream>
+#include <string>
+#include <cassert>
+#include <fstream>
+
+using namespace std;
+//int lineLength, istream& inf,
+//int fill( ostream& outf)
+//{
+//    return 4;
+//
+//
+//}
+
+
+
+int main()
+{
+    ifstream infile;
+    ofstream outfile;
+    outfile.open("result.txt");
+    infile.open("input.txt");
+        
+    if(infile)
+    {
+        cerr<<" input file exists \n";
+       
+    }
+    if(!infile)
+    {
+        cerr<<"input file doesnt exist \n";
+     
+    }
+    if(outfile)
+    {
+        cerr<<"Out file exists \n";
+    }
+    if(!outfile)
+    {
+        cerr<<"outfile doesnt exist \n";
+    }
+    
+    char c[65];
+    infile >> c;
+    
+    const int MAX = 77;
+        char line[MAX];
+        infile.getline(line, MAX);
+    
+ 
+ 
+    while (infile.get(c, MAX))
+    {
+       
+
+    }
+
+  
+    outfile.close();
+    infile.close();
+    cout<<"done. \n";
+  
+    }
