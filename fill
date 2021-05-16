@@ -2,22 +2,34 @@
 #include <string>
 #include <cassert>
 #include <fstream>
-#include <iomanip>
+#include <cstring>
+
 
 using namespace std;
+
+
 int fill(int lineLength, istream& inf, ostream& outf)
 {
+    char c;
+    char word = '\0';
+    
+   
     if(lineLength < 1)
     {
         return 2;
     }
-    
-    char c;
-    while(inf.get(c))
-    {
-        outf << c;
-    }
-    
+
+        while(inf.get(c))
+        {
+            for (;;)
+            {
+                if(isspace(c))
+                {
+                    break;
+                }
+                outf<<c;
+            }
+        }
     outf << endl;
     outf<<"I hate C++ with every fiber of my being";
     return 0;
